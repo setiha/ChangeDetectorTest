@@ -1,4 +1,4 @@
-import {AfterViewChecked, Component, DoCheck, OnChanges, SimpleChanges} from '@angular/core';
+import {AfterViewChecked, Component, DoCheck, Input, OnChanges, SimpleChanges} from '@angular/core';
 import {Log} from "ng2-logger/browser";
 
 @Component({
@@ -8,7 +8,7 @@ import {Log} from "ng2-logger/browser";
 })
 export class Test3Component implements DoCheck, OnChanges, AfterViewChecked {
   logger: any  = Log.create('Test3Component');
-
+@Input() buttonText;
   constructor(){
     this.logger.color = 'green';
   }

@@ -1,5 +1,5 @@
 ///<reference path="../../../node_modules/ngx-logger/lib/logger.service.d.ts"/>
-import {AfterViewChecked, Component, DoCheck, OnChanges, OnInit, SimpleChanges} from '@angular/core';
+import {AfterViewChecked, Component, DoCheck, OnChanges, Input, SimpleChanges} from '@angular/core';
 
 import {Log} from "ng2-logger/browser";
 
@@ -14,7 +14,7 @@ import {Log} from "ng2-logger/browser";
 })
 export class Test2Component implements  DoCheck, OnChanges, AfterViewChecked {
   logger: any  = Log.create('Test2Component');
-
+  @Input() buttonText: { text: string};
   constructor(){
     this.logger.color = 'pink';
   }
